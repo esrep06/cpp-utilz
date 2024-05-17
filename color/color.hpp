@@ -34,8 +34,28 @@ namespace utilz
     struct rgba_color
     {
         uint8_t r, g, b, a;
+
         rgba_color(uint8_t r, uint8_t g, uint8_t b, uint8_t a) : r(r), g(g), b(b), a(a) {}
         rgba_color() : r(0), g(0), b(0), a(0) {}
+
+        rgba_color normalized() 
+        {
+            rgba_color res;
+            res.r = r / 255;
+            res.g = g / 255;
+            res.b = b / 255;
+            res.a = a / 255;
+
+            return res;
+        }
+
+        void normalize()
+        {
+            r /= 255;
+            g /= 255;
+            b /= 255;
+            a /= 255;
+        }
 
         static uint8_t rgbacmp(rgba_color a, rgba_color b) 
         { return (a.r == b.r && a.g == b.g && a.b == b.b && a.a == b.a); }
@@ -55,7 +75,6 @@ namespace utilz
 
         std::string to_string()
         { return std::string(std::to_string(r) + ", " + std::to_string(g) + ", " + std::to_string(b)); }
-
     };
 };
 
