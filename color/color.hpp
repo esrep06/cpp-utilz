@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include <string>
+#include <cstdint>
 
 #define RGBA_WHITE 255, 255, 255, 255
 #define RGBA_BLACK 0, 0, 0, 255
