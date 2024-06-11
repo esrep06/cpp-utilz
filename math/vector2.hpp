@@ -104,7 +104,7 @@ namespace utilz
             return vector2f(vec.x / m, vec.y / m); 
         }
 
-        static vector2f lerp(vector2 target, vector2 source, float speed)
+        static vector2f lerp(vector2f target, vector2f source, float speed)
         {
             vector2f res;
             res.x = source.x + ((target.x - source.x) * speed);
