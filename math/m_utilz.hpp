@@ -48,7 +48,7 @@ namespace utilz
             static float clampf(float min, float max, float val)
             {
                 if (val < min) return min;
-                if (val < max) return max;
+                if (val > max) return max;
 
                 return val;
             }
